@@ -1,0 +1,12 @@
+{
+  "apps": [
+    {
+      "id": "infantry-ai",
+      "name": "Infantry AI",
+      "kind": "shell",
+      "feed": "https://github.com/SuperiorSoft-LLC/infantry-ai/releases/download/rust-{channel}/latest.json",
+      "publicKey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEZGRUU4MkI5MDM4QjY2MjEKUldRaFpvc0R1WUx1LzJkaXhnbEttSmlHZG03NlQ2bjYrQ3NxdGw0dmFiQnNCb0RiUjN3MW1YSGoK",
+      "restart": "relaunch"
+    }
+  ]
+}
