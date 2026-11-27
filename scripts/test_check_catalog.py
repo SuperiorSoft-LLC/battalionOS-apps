@@ -47,6 +47,12 @@ class CheckCatalog(unittest.TestCase):
             self.assertTrue(any("icon must be" in e for e in cc.check(with_app(icon=bad), ROOT)), bad)
         self.assertEqual(cc.check(with_app(icon="https://example.com/a.png"), ROOT), [])
 
+    def test_infantry_ai_has_three_https_channels(self):
+        app = next(a for a in GOOD["apps"] if a["id"] == "infantry-ai")
+        self.assertEqual(set(app["channels"]), {"stable", "prerelease", "nightly"})
+        for url in app["channels"].values():
+            self.assertTrue(url.startswith("https://"), url)
+
     def test_bad_permission_fails(self):
         self.assertTrue(any("unknown permission" in e for e in cc.check(with_app(permissions=["root"]), ROOT)))
 

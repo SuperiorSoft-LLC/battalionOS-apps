@@ -13,7 +13,7 @@ The Armory reads this file. Each entry of `apps`: `id`, `name`, `kind` (`app` or
 older file the 0.7 releases read; it stays as it is.
 
 Each app: `id` (2-63 chars, `a-z 0-9 -`, unique), `name`, `publicKey` (minisign key, pinned at first install),
-`contract` (`{min, max}`, the app contract versions it speaks), `channels` (channel name -> https feed url), and
+`contract` (`{min, max}`, the app contract versions it speaks), `channels` (channel name -> https feed url; the channel names are `stable`, `prerelease` and `nightly`), and
 optional `publisher`, `summary`, `license`, `homepage` (https), `icon` (a `data:image/` url or an https url; the OS accepts nothing else) and `permissions`
 (`process.spawn`, `network`, `files.user`, `window`, `login.window`).
 

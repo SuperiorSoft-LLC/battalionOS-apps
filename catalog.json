@@ -14,6 +14,7 @@
       "permissions": ["process.spawn", "network", "files.user", "window", "login.window"],
       "channels": {
         "stable": "https://github.com/SuperiorSoft-LLC/infantry-ai/releases/download/bos-stable/feed.json",
+        "prerelease": "https://github.com/SuperiorSoft-LLC/infantry-ai/releases/download/bos-prerelease/feed.json",
         "nightly": "https://github.com/SuperiorSoft-LLC/infantry-ai/releases/download/bos-nightly/feed.json"
       }
     }
