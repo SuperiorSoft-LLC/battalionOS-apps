@@ -1,0 +1,13 @@
+{
+  "version": "0.1.0",
+  "contract": 1,
+  "stateSchema": 1,
+  "platforms": {
+    "windows-x86_64": {
+      "url": "files-0.1.0-windows-x86_64.bosapp",
+      "signature": "untrusted comment: signature from minisign secret key\nRURWEMRQL73eJoxzjcW4TVNoEVDFiF2Ij1fNgq3MLuzqdJGD5GMB0izA2NrXns3SPAgqbB8IWD3MElSI/R1ois/LiMp95Hdh7QE=\ntrusted comment: timestamp:1795885138\tfile:files-0.1.0-windows-x86_64.bosapp\thashed\nWPEV3qEFK3InT5HgiTLifYIQmEzL3TN6rLkjdct1viYFsmAE4H1NRd6JoM+e9jKHSKH9ZynDTUriU5uGUAvEDQ==\n",
+      "sha256": "beca84a2785a4bd73d63bff338987cd28eb2b4bb8b4367779f854c7add9d88ea",
+      "size": 80497
+    }
+  }
+}

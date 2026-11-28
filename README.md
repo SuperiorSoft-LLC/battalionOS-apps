@@ -24,3 +24,5 @@ optional `publisher`, `summary`, `license`, `homepage` (https), `icon` (a `data:
 3. Add the entry to `apps` in `catalog.json`, with https channel urls only.
 4. Run `python3 scripts/test_check_catalog.py` and `python3 scripts/check_catalog.py`; CI runs both on every push.
 5. Open a pull request. The code of the app stays in your own repository: the catalog holds only the entry.
+
+The full walkthrough, and what the pull request check verifies, is in [CONTRIBUTING.md](CONTRIBUTING.md).
