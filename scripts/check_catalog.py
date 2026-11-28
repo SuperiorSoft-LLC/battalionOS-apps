@@ -4,7 +4,12 @@ Usage: check_catalog.py [catalog.json]   exit 0 = ok, 1 = problems (one line eac
 import json, re, sys
 from pathlib import Path
 
-PERMISSIONS = {"process.spawn", "network", "files.user", "window", "login.window"}
+# Pinned copy of BattalionOS crates/battalion-app-api/src/manifest.rs:169 (PERMISSIONS). Keep it equal;
+# test_check_catalog.PermissionsPinned fails when they drift.
+PERMISSIONS = {
+    "process.spawn", "network", "files.user", "window", "login.window",
+    "notifications", "scan.code", "files.read", "files.write",
+}
 ID = re.compile(r"^[a-z0-9][a-z0-9-]{1,62}$")
 STR_FIELDS = ("name", "publisher", "summary", "license", "icon", "homepage")
 

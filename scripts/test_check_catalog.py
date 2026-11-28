@@ -57,5 +57,18 @@ class CheckCatalog(unittest.TestCase):
         self.assertTrue(any("unknown permission" in e for e in cc.check(with_app(permissions=["root"]), ROOT)))
 
 
+class PermissionsPinned(unittest.TestCase):
+    # Mirror of battalion-app-api manifest.rs:169. Change both together.
+    OS = {"process.spawn", "network", "files.user", "window", "login.window",
+          "notifications", "scan.code", "files.read", "files.write"}
+
+    def test_permissions_match_the_os_list(self):
+        self.assertEqual(cc.PERMISSIONS, self.OS)
+
+    def test_every_os_permission_is_accepted(self):
+        for perm in sorted(self.OS):
+            self.assertEqual(cc.check(with_app(permissions=[perm]), ROOT), [], perm)
+
+
 if __name__ == "__main__":
     unittest.main()

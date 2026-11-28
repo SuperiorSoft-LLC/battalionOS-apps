@@ -190,9 +190,8 @@ class FilesDryRun(unittest.TestCase):
         r = self.run_fixture()
         for name in ("feed", "download", "size", "sha256", "signature"):
             self.assertTrue(any(s == "PASS" and name in n for s, n, _ in r.checks), name)
-        # The only failure: the package asks for files.read/files.write, which the OS permission list lacks.
-        self.assertEqual({n.split(": ")[-1] for s, n, _ in r.checks if s == "FAIL"}, {"schema", "manifest"})
-        self.assertTrue(all("files.read" in d or "files.write" in d for s, _, d in r.checks if s == "FAIL"))
+        # ARMORY-CHECK-2: files.read/files.write are OS permissions, so the dry run passes fully.
+        self.assertEqual([n for s, n, _ in r.checks if s == "FAIL"], [])
 
     def test_files_tampered_copy_fails(self):
         def tamper(d):
